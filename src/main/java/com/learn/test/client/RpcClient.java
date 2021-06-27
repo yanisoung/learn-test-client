@@ -11,8 +11,7 @@ import com.learn.test.rpc.RpcTestService;
 public class RpcClient {
 
 	public Object rpcInvoker () {
-		RpcProxyClient rpcProxyClient = new RpcProxyClient();
-		RpcTestService rpcTestService = (RpcTestService)rpcProxyClient
+		RpcTestService rpcTestService = (RpcTestService)RpcProxyClient
 			.clientProxy(RpcTestService.class, "localhost", 7003);
 		final String hello = rpcTestService.hello("我来啦~");
 		System.out.println(hello);
